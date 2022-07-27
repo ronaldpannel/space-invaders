@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+canvas {
+  border: white solid 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.gameWrapper {
+  /* border: red solid 5px; */
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.startBtn {
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 460px;
+  margin-left: 200px;
+  margin-right: auto;
+  background-color: orangered;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 20px;
+  border: 1px white solid;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.startBtn:hover,
+.startBtn:focus {
+  background-color: transparent;
+}
+.timer {
+  position: absolute;
+  top: 50;
+  left: 10px;
+  color: white;
+  z-index: 10;
+}
+.winMessage, .loseMessage{
+  color: white;
+  z-index: 20;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.highScore{
+  position: absolute;
+  top: 50;
+  right: 60px;
+  color: white;
+  z-index: 10;
+}
+
