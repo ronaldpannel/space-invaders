@@ -3,6 +3,7 @@ let myCanvas;
 let spaceship;
 let invader;
 let startButton;
+let lowScoreResetBtn;
 let gameTimer;
 let winMessage;
 let loseMessage;
@@ -55,6 +56,15 @@ function setup() {
   startButton = createButton("Restart Game");
   startButton.class("startBtn");
   startButton.parent("gameWrapper");
+
+  lowScoreResetBtn = createButton("Reset Best Time");
+  lowScoreResetBtn.class("resetBtn");
+  lowScoreResetBtn.parent("gameWrapper");
+  lowScoreResetBtn.mousePressed(lowScoreReset);
+
+  function lowScoreReset() {
+    storeItem("score", '100');
+  }
 }
 
 function draw() {
@@ -103,9 +113,11 @@ function draw() {
       winMessage = select("#winMessage");
       winMessage.html("You Have Saved the World");
       clearTimeout(sTimeOut);
-      console.log(timeCounter);
-      console.log(bestScore);
-      dataStore = storeItem("score", timeCounter);
+      if (timeCounter < dataGet) {
+        dataStore = storeItem("score", timeCounter);
+      }
+      // console.log(timeCounter);
+      // console.log(dataGet);
     }
   }
   for (let i = 0; i < invaders.length; i++) {
