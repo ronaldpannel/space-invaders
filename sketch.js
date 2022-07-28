@@ -59,7 +59,7 @@ function setup() {
   startButton.mousePressed(restartGame);
 
   function restartGame() {
-    window.location.reload(true);
+    window.location.reload();
   }
 
   lowScoreResetBtn = createButton("Reset Best Time");
