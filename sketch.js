@@ -56,6 +56,11 @@ function setup() {
   startButton = createButton("Restart Game");
   startButton.class("startBtn");
   startButton.parent("gameWrapper");
+  startButton.mousePressed(restartGame);
+
+  function restartGame() {
+    window.location.reload(true);
+  }
 
   lowScoreResetBtn = createButton("Reset Best Time");
   lowScoreResetBtn.class("resetBtn");
@@ -63,7 +68,8 @@ function setup() {
   lowScoreResetBtn.mousePressed(lowScoreReset);
 
   function lowScoreReset() {
-    storeItem("score", '100');
+    storeItem("score", "100");
+    window.location.reload();
   }
 }
 
@@ -116,8 +122,6 @@ function draw() {
       if (timeCounter < dataGet) {
         dataStore = storeItem("score", timeCounter);
       }
-      // console.log(timeCounter);
-      // console.log(dataGet);
     }
   }
   for (let i = 0; i < invaders.length; i++) {
